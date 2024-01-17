@@ -15,6 +15,7 @@ foul=0
 
 
 
+
 def next_person():
     text_result.insert("end" , "\n")
 
@@ -27,8 +28,8 @@ def open_new_window():
     Final_order = tk.Text(new_window , height=4 , width=35 , font=("Arial", 18))
     Final_order.grid(row=1 , column=0 , sticky="n" , padx=20 , pady=10 , columnspan=5)
     for row in range(2, 48):  # Adjust the range to match your requirements
-        column_J = ws['J' + str(row)].value
-        value_A = ws['A' + str(row)].value
+        column_J = ws['J' + str(row)].value                                                #Name Column
+        value_A = ws['A' + str(row)].value                                                 #Name Row
 
         if column_J is not None and value_A is not None and value_A != 0:
             Final_order.insert( 1.0  , f" Name : {column_J} , Pay : {value_A}\n")
@@ -36,7 +37,15 @@ def open_new_window():
     All_types.grid(row=0 , column=0 , padx=20 , pady=10 , columnspan=5)
     Total = tk.Text(new_window, height=3 , width=40 , font=("Arial" , 20))
     Total.grid(row=2 , column=0 , padx=20 , pady=10 , columnspan=5)
+    total_cost = ws['E51'].value                                           # Total Place
+    Total.insert(1.0 , f"Total : {total_cost}")
+    for column in range(66 , 73):
+        row_51 = "49"
+        all_totals = ws[chr(column) + row_51].value
+        type_per_num = ws[chr(column) + "1"].value
 
+        if all_totals is not None and all_totals !=0:
+            All_types.insert(1.0 , f"{type_per_num} : {all_totals}\n")
 names = []
 for i in range (2 , 48):
     x = ws['J' + str(i)].value
