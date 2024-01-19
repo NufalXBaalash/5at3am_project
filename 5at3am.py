@@ -38,7 +38,7 @@ def open_new_window():
     foul_sogok_total = 0
     Final_order = tk.Text(new_window, height=4, width=35, font=("Arial", 18))
     Final_order.grid(row=1, column=0, sticky="n", padx=20, pady=10, columnspan=5)
-    for row in range(2, 48):  # Adjust the range to match your requirements
+    for row in range(2, 49):  # Adjust the range to match your requirements
         column_J = ws["J" + str(row)].value  # Name Column
         value_A = ws["A" + str(row)].value  # Name Row
         SUM = ws["I"+str(row)].value*5.5+ws["H"+str(row)].value*5.5+ws["G"+str(row)].value*11+ws["F"+str(row)].value*6.5+ws["E"+str(row)].value*25+ws["D"+str(row)].value*18+ws["C"+str(row)].value*13+ws["B"+str(row)].value*13
