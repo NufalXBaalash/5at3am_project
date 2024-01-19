@@ -118,7 +118,7 @@ def search_items():
         combo_names["values"] = value_to_display
 
 
-
+ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("E:\College\C++ Codes\Python Codes\Khat3am_Project\Color_themes\Theme 5.json")
 root = ctk.CTk()
 root.geometry("800x600")
