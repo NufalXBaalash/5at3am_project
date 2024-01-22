@@ -41,6 +41,9 @@ def open_new_window():
     for row in range(2, 49):  # Adjust the range to match your requirements
         column_J = ws["J" + str(row)].value  # Name Column
         value_A = ws["A" + str(row)].value  # Name Row
+        if column_J is not None and value_A is not None and value_A != 0:
+            Final_order.insert(1.0, f"{column_J} , Pay : {value_A}\n")
+            
         SUM = ws["I"+str(row)].value*5.5+ws["H"+str(row)].value*5.5+ws["G"+str(row)].value*11+ws["F"+str(row)].value*6.5+ws["E"+str(row)].value*25+ws["D"+str(row)].value*18+ws["C"+str(row)].value*13+ws["B"+str(row)].value*13
         total_cost = total_cost + SUM
         ws["A" + str(row)] = SUM
@@ -61,11 +64,7 @@ def open_new_window():
         foul_sogok_total += ws["B" + str(row)].value
         ws["B49"] = foul_sogok_total
 
-
         
-
-        if column_J is not None and value_A is not None and value_A != 0:
-            Final_order.insert(1.0, f"{column_J} , Pay : {value_A}\n")
     All_types = tk.Text(new_window, height=3, width=40, font=("Arial", 20))
     All_types.grid(row=0, column=0, padx=20, pady=10, columnspan=5)
     Total = tk.Text(new_window, height=3, width=40, font=("Arial", 20))
@@ -119,7 +118,7 @@ def search_items():
 
 
 ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("E:\College\C++ Codes\Python Codes\Khat3am_Project\Color_themes\Theme 5.json")
+ctk.set_default_color_theme("E:\College\C++ Codes\Python Codes\Khat3am_Project\Color_themes\Theme 3.json")
 root = ctk.CTk()
 root.geometry("800x600")
 root.title("5at3am")
@@ -137,9 +136,9 @@ frame2.grid_columnconfigure((5), weight=2)
 frame2.grid_rowconfigure((8), weight=2)
 frame2.grid(row=0, column=0, padx=20, pady=20)
 
-text_result = ctk.CTkTextbox(frame2, height=455, width=150, font=("Arial", 20))
+text_result = ctk.CTkTextbox(frame2, height=455, width=150, font=("Arial", 20) , corner_radius=0)
 text_result.grid(row=2, column=0, padx=20, pady=10, columnspan=10, sticky="nw")
-text_Tperson = ctk.CTkTextbox(frame2, height=455, width=150, font=("Arial", 20))
+text_Tperson = ctk.CTkTextbox(frame2, height=455, width=150, font=("Arial", 20) , corner_radius=0)
 text_Tperson.grid(row=2, column=3, padx=20, pady=10, columnspan=10, sticky="ne")
 text_total = ctk.CTkTextbox(frame2, height=68, width=290, font=("Arial", 20))
 text_total.grid(row=0, column=0, padx=20, pady=10, columnspan=10)
