@@ -367,7 +367,7 @@ class YourClassName:
 entry = ctk.CTkEntry(frame4, textvariable=variable, height=20, width=250)
 entry.grid(row=1, column=0, padx=20, pady=0, columnspan=5, sticky="e")
 
-result_listbox = CTkListbox(frame4, height=20, width=300)
+result_listbox = CTkListbox(frame4, height=120, width=300)
 result_listbox.grid(row=2, column=0, padx=00, pady=10, columnspan=5)
 
     # Bind the entry widget to the update_results function
@@ -432,7 +432,7 @@ def ngm3():
 wb.save(path)
 
 
-order_per_person_box= ctk.CTkTextbox(frame4, height=120, width=350, font=("Arial", 18))
+order_per_person_box= ctk.CTkTextbox(frame4, height=173, width=350, font=("Arial", 18))
 order_per_person_box.grid(row=5, column=0, sticky="n", padx=20, pady=10, columnspan=500) 
     
 
